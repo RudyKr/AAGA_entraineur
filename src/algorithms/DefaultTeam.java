@@ -13,11 +13,11 @@ public class DefaultTeam {
 
     private int edgeThreshold=55;
     private int eTc=edgeThreshold*edgeThreshold;
-    private int numero=1;
-    double scoredufile = scoreEntraineur(filescore, edgeThreshold);
+    private int numero = 2;
+    private boolean onlyres = false;
     private ArrayList<Point> points=readFromFile(numero, "input");
     private ArrayList<Point> filescore=readFromFile(numero, "score");
-    private boolean onlyres = false;
+    double scoredufile = scoreEntraineur(filescore, edgeThreshold);
 
     private int nbInst=points.size();
     private static int count=0;
@@ -156,7 +156,7 @@ public class DefaultTeam {
         }
         scoreBefore = scoreEntraineur(result, edgeThreshold);
         for (int i = 0; i < result.size(); i++) {
-//            long timeLoop = System.currentTimeMillis();
+            long timeLoop = System.currentTimeMillis();
             System.out.println("Loop "+i);
             for (int j = i; j < result.size(); j++) {
                 Collections.swap(result, i, j);
@@ -169,7 +169,7 @@ public class DefaultTeam {
                 }
                 else Collections.swap(result, i, j);
             }
-//            System.out.println("Loop time : "+(double) (System.currentTimeMillis() - timeLoop) / 1000.0+" sec");
+            System.out.println("Loop time : " + (double) (System.currentTimeMillis() - timeLoop) / 1000.0 + " sec");
         }
         return result;
     }
