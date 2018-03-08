@@ -166,7 +166,7 @@ public class DefaultTeam {
                 Point point = points.stream().min(Comparator.comparingInt(po -> Math.abs(diffScore(po, points))))
                         .orElse(null);
                 if (point == null)
-                    System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah");
+                    System.out.println("NullPointerExceptionKappa");
                 points.remove(point);
                 result.add(point);
             }
@@ -175,6 +175,7 @@ public class DefaultTeam {
             return result;
         }).min(Comparator.comparingDouble(ar -> scoreEntraineur(ar, edgeThreshold))).orElse(null);
 
+        assert res != null;
         System.out.println("Resultat entraineur: score = " + scoreEntraineur(res, edgeThreshold));
         return res;
     }
