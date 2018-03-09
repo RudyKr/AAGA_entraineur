@@ -27,3 +27,5 @@ Lorsque nous avons changé le début de notre heuristique nous avons remarqué q
 Nous avons également divisé notre temps de calcul par 2 en n'utilisant que la distance au carré lors d'un calcul de distance entre 2 points.
 
 Nous pourrions également grandement améliorer la vitesse de calcul de notre fonction swap (qui est beaucoup trop longue pour être lancée sur de grandes instances) en recalculant seulement le delta de score qui a changé sachant que le score de l'alignement précédant le premier item qui a été échangé sera le même et ainsi éviter de recalculer depuis le début de l'alignement. Malheuresement, nous n'avons pas réussi a implémenter cette optimisation.
+
+

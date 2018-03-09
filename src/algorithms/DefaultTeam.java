@@ -13,8 +13,8 @@ public class DefaultTeam {
 
     private int edgeThreshold=55;
     private int eTc=edgeThreshold*edgeThreshold;
-    private int numero = 2;
-    private boolean onlyres = false;
+    private int numero = 4;
+    private boolean onlyres = true;
     private ArrayList<Point> points=readFromFile(numero, "input");
     private ArrayList<Point> filescore=readFromFile(numero, "score");
     double scoredufile = scoreEntraineur(filescore, edgeThreshold);
@@ -131,7 +131,7 @@ public class DefaultTeam {
     private int indexleastdegre(ArrayList<Point> points, int edgeThreshold) {
         AtomicInteger minValue = new AtomicInteger(Integer.MAX_VALUE);
         AtomicInteger index = new AtomicInteger(-1);
-        points.stream().forEach(i -> {
+        points.forEach(i -> {
             int degre = degree(points, i, edgeThreshold);
             if (degre < minValue.get()) {
                 minValue.set(degre);
@@ -272,7 +272,7 @@ public class DefaultTeam {
         String filename=folder+"/"+folder+""+numerofichier+".points";
         String line;
         String[] coordinates;
-        ArrayList<Point> points=new ArrayList<Point>();
+        ArrayList<Point> points = new ArrayList<>();
         try {
             BufferedReader input = new BufferedReader(
                     new InputStreamReader(new FileInputStream(filename))
