@@ -13,7 +13,7 @@ public class DefaultTeam {
 
     private int edgeThreshold=55;
     private int eTc=edgeThreshold*edgeThreshold;
-    private int numero = 4;
+    private int numero = 2;
     private boolean onlyres = true;
     private ArrayList<Point> points=readFromFile(numero, "input");
     private ArrayList<Point> filescore=readFromFile(numero, "score");
